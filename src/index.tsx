@@ -6,15 +6,15 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo managed workflow\n';
 
-const PortForwarding = NativeModules.PortForwarding  ? NativeModules.PortForwarding  : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+const PortForwarding = NativeModules.PortForwarding ? NativeModules.PortForwarding : new Proxy(
+  {},
+  {
+    get() {
+      throw new Error(LINKING_ERROR);
+    },
+  }
+);
 
-export function multiply(a: number, b: number): Promise<number> {
-  return PortForwarding.multiply(a, b);
+export function start(remoteHost: string, fromPort: number, toPort: number): Promise<string> {
+  return PortForwarding.start(remoteHost, fromPort, toPort);
 }

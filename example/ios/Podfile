@@ -8,7 +8,7 @@ ENV['RCT_NEW_ARCH_ENABLED'] = '0'
 
 target 'PortForwardingExample' do
   config = use_native_modules!
-
+  pod 'CocoaAsyncSocket', modular_headers: true
   # Flags change depending on the env values.
   flags = get_default_flags()
 
