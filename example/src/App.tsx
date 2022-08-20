@@ -7,7 +7,7 @@ export default function App() {
   const [result, setResult] = React.useState<string | undefined>();
 
   React.useEffect(() => {
-    start("192.168.1.4", 22, 22).then(setResult);
+    start("192.168.1.4", 44, 44).then(setResult);
   }, []);
 
   return (
