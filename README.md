@@ -9,11 +9,11 @@ npm install react-native-port-forwarding
 ## Usage
 
 ```js
-import { multiply } from "react-native-port-forwarding";
+import { start } from "react-native-port-forwarding";
 
 // ...
 
-const result = await multiply(3, 7);
+const result = await start("192.168.1.1", 22, 44);
 ```
 
 ## Contributing
