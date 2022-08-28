@@ -30,7 +30,7 @@ public class PortForwardingModule extends ReactContextBaseJavaModule {
 
     public String findExternalIPAddress () throws IOException, UPNPResponseException {
         if(internetGatewayDevices == null){
-            internetGatewayDevices = InternetGatewayDevice.getDevices(5000);
+            internetGatewayDevices = InternetGatewayDevice.getDevices(10000);
         }
         if(internetGatewayDevices != null) {
             for (InternetGatewayDevice IGD : internetGatewayDevices) {
@@ -44,7 +44,7 @@ public class PortForwardingModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void start(String remoteHost, int fromPort, int toPort, Promise promise)  throws IOException, UPNPResponseException {
         if(internetGatewayDevices == null) {
-            internetGatewayDevices = InternetGatewayDevice.getDevices(5000);
+            internetGatewayDevices = InternetGatewayDevice.getDevices(10000);
         }
         if(internetGatewayDevices != null) {
             for (InternetGatewayDevice addIGD : internetGatewayDevices) {
