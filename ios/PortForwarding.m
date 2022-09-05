@@ -2,9 +2,7 @@
 
 @interface RCT_EXTERN_MODULE(PortForwarding, NSObject)
 
-RCT_EXTERN_METHOD(start:(NSString)remoteHost
-                 fromPort:(NSNumber)fromPort
-                 toPort:(NSNumber)toPort
+RCT_EXTERN_METHOD(start:(NSNumber)toPort
                  withResolver:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 
