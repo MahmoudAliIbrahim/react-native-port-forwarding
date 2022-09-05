@@ -1,13 +1,17 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { start } from 'react-native-port-forwarding';
+import { start, stop } from 'react-native-port-forwarding';
 
 export default function App() {
   const [result, setResult] = React.useState<string | undefined>();
 
   React.useEffect(() => {
-    start("192.168.1.4", 44, 44).then(setResult);
+    start(512).then(setResult);
+
+    return () => {
+      stop(512).then(setResult);
+    };
   }, []);
 
   return (
