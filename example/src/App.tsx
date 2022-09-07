@@ -7,10 +7,20 @@ export default function App() {
   const [result, setResult] = React.useState<string | undefined>();
 
   React.useEffect(() => {
-    start(22).then(setResult);
+    start(22)
+      .then(setResult)
+      .catch((e) => {
+        console.log(e);
+        setResult(e.message);
+      });
 
     return () => {
-      stop(22).then(setResult);
+      stop(22)
+        .then(setResult)
+        .catch((e) => {
+          console.log(e);
+          setResult(e.message);
+        });
     };
   }, []);
 

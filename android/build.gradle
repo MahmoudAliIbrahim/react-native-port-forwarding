@@ -123,10 +123,10 @@ repositories {
 
 
 dependencies {
-    //noinspection GradleDynamicVersion
-  api fileTree(dir: "libs", include: ["*.jar"])
+  //noinspection GradleDynamicVersion
+  implementation fileTree(dir: "libs", include: ["*.jar"])
   implementation "com.facebook.react:react-native:+"
-// From node_modules
+  // From node_modules
 }
 
 if (isNewArchitectureEnabled()) {

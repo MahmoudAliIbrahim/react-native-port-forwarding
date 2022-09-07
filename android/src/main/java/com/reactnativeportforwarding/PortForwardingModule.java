@@ -26,17 +26,36 @@ public class PortForwardingModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void start(int port, Promise promise) {
-      UPnP.openPortTCP(port);
-      UPnP.openPortUDP(port);
-
-      promise.resolve("Port forwarding started at port " + port);
+      try {
+        if (UPnP.isUPnPAvailable()) {
+            if (UPnP.isMappedTCP(port)) {
+                promise.reject("UPnP port forwarding not enabled: port is already mapped");
+            } else if (UPnP.openPortTCP(port)) {
+                promise.resolve("UPnP port forwarding enabled");
+            } else {
+                promise.reject("UPnP port forwarding failed");
+            }
+          } else {
+              promise.reject("UPnP is not available");
+          }
+      } catch (Exception e) {
+        e.printStackTrace();
+        promise.reject("Network error: " + e.getMessage());
+      }
     }
 
     @ReactMethod
-    public void stop(int port,Promise promise) {
-      UPnP.closePortTCP(port);
-      UPnP.closePortUDP(port);
+    public void stop(int port, Promise promise) {
+      try {
+        if(UPnP.closePortTCP(port)) {
+            promise.resolve("UPnP port forwarding disabled");
+        } else {
+            promise.reject("UPnP port forwarding not disabled");
+        }
+      } catch (Exception e) {
+        e.printStackTrace();
+        promise.reject("Network error: " + e.getMessage());
+      }
 
-      promise.resolve("Port forwarding stopped at port " + port);
     }
 }
