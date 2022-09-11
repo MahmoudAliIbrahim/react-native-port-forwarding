@@ -7,7 +7,7 @@ export default function App() {
   const [result, setResult] = React.useState<string | undefined>();
 
   React.useEffect(() => {
-    start(22)
+    start(4000)
       .then(setResult)
       .catch((e) => {
         console.log(e);
@@ -15,7 +15,7 @@ export default function App() {
       });
 
     return () => {
-      stop(22)
+      stop(4000)
         .then(setResult)
         .catch((e) => {
           console.log(e);

@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E555C0D2413F4C50049A1A2 /* PortForwarding.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* PortForwarding.m */; };
-		F4FF95D7245B92E800C19C63 /*  PortForwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  PortForwarding.swift */; };
+		147CFAF428CE585D001CA3BE /* PortMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 147CFAF228CE585D001CA3BE /* PortMapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +24,10 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libPortForwarding.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPortForwarding.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5891CC2AC0600A0062D /* PortForwarding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortForwarding.m; sourceTree = "<group>"; };
-		F4FF95D5245B92E700C19C63 /* PortForwarding-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PortForwarding-Bridging-Header.h"; sourceTree = "<group>"; };
-		F4FF95D6245B92E800C19C63 /* PortForwarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortForwarding.swift; sourceTree = "<group>"; };
+		147CFAF128CE584F001CA3BE /* PortForwarding.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PortForwarding.mm; sourceTree = "<group>"; };
+		147CFAF228CE585D001CA3BE /* PortMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortMapper.m; sourceTree = "<group>"; };
+		147CFAF328CE585D001CA3BE /* PortMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortMapper.h; sourceTree = "<group>"; };
+		B3E7B5881CC2AC0600A0062D /* PortForwarding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortForwarding.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +52,10 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				F4FF95D6245B92E800C19C63 /* PortForwarding.swift */,
-				B3E7B5891CC2AC0600A0062D /* PortForwarding.m */,
-				F4FF95D5245B92E700C19C63 /* PortForwarding-Bridging-Header.h */,
+				147CFAF328CE585D001CA3BE /* PortMapper.h */,
+				147CFAF228CE585D001CA3BE /* PortMapper.m */,
+				147CFAF128CE584F001CA3BE /* PortForwarding.mm */,
+				B3E7B5881CC2AC0600A0062D /* PortForwarding.h */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,8 +117,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FF95D7245B92E800C19C63 /* PortForwarding.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* PortForwarding.m in Sources */,
+				147CFAF428CE585D001CA3BE /* PortMapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,9 +232,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = PortForwarding;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "PortForwarding-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -251,8 +248,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = PortForwarding;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "PortForwarding-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
